@@ -136,7 +136,8 @@ public:
 private:
 	int count;
 
-	void NodeRecord(SimpleTreeNode**list,SimpleTreeNode*element) // recursive function for record elements into the array of TreeNOdes
+	void NodeRecord(SimpleTreeNode**list,SimpleTreeNode*element) // recursive function for record elements into 
+		                                                     //the array of TreeNOdes
 	{
 		
 		list[count] = element;
@@ -149,7 +150,8 @@ private:
 		
 	}
 
-	void NodeFind(SimpleTreeNode**list, SimpleTreeNode*element,int val) //Recursive function for record appropriate nodes into the array  
+	void NodeFind(SimpleTreeNode**list, SimpleTreeNode*element,int val) //Recursive function for record appropriate nodes 
+  	                                                                    //into the array  
 	{
 		
 		if (element->NodeValue == val)
