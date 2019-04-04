@@ -2,7 +2,7 @@
 /*
 Purpose:
 In computer science, a tree is a widely used abstract data type (ADT)
-â€”or data structure implementing this ADTâ€”that simulates a hierarchical tree structure, 
+—or data structure implementing this ADT—that simulates a hierarchical tree structure, 
 with a root value and subtrees of children with a parent node, 
 represented as a set of linked nodes.
 
@@ -132,28 +132,34 @@ public:
 		return LeavesNumber(Root); //in private section
 	}
 
+	/*int NodeLevel()
+	{
+		count = 0;
+		Levels(Root);
+		return count;
+	}*/
 
 private:
 	int count;
 
-	void NodeRecord(SimpleTreeNode**list,SimpleTreeNode*element) // recursive function for record elements into 
-		                                                     //the array of TreeNOdes
+	void NodeRecord(SimpleTreeNode**list,SimpleTreeNode*element) // recursive function for record elements into the array of TreeNOdes
 	{
 		
+		if (element == NULL) return;
+
 		list[count] = element;
 		count++;
 		
-		if (element == NULL) return;
 
 		for (int j = 0; (element->Children[j])&&(j < MAX_CHILD); ++j)
 			NodeRecord(list, element->Children[j]);
 		
 	}
 
-	void NodeFind(SimpleTreeNode**list, SimpleTreeNode*element,int val) //Recursive function for record appropriate nodes 
-  	                                                                    //into the array  
+	void NodeFind(SimpleTreeNode**list, SimpleTreeNode*element,int val) //Recursive function for record appropriate nodes into the array  
 	{
-		
+		if (element == NULL) return;
+
 		if (element->NodeValue == val)
 		{
 			list[count] = element;
@@ -161,7 +167,7 @@ private:
 		}
 
 
-		if (element == NULL) return;
+		
 
 		for (int j = 0; (element->Children[j]) && (j < MAX_CHILD); ++j)
 			 NodeFind(list, element->Children[j], val);
@@ -170,7 +176,8 @@ private:
 
 	int LeavesNumber(SimpleTreeNode*elem) //Recursive function for the computation number of leaves into the tree
 	{
-
+		if (elem == NULL) return count;
+		//printf("Elem->Children[0]:%i\n", elem->Children[0]);
 		if (elem->Children[0] == NULL) count++;
 
 		for (int i = 0; (elem->Children[i]) && (i < MAX_CHILD); ++i)
@@ -178,12 +185,39 @@ private:
 		return count;
 	}
 
+	/*int Levels(SimpleTreeNode*elem)
+	{
+
+		for (int i = 0;(elem->Children[i])&& i < MAX_CHILD; ++i)
+		{
+			
+		}
+
+		for (int i = 0; (elem->Children[i]) && (i < MAX_CHILD); ++i)
+			Levels(elem->Children[i]);
+		return count;
+	}*/
 };
 
 
 
-void test()
+int main()
 {
+	SimpleTree*empty_tree = new SimpleTree(NULL);
+	SimpleTreeNode**list1 = empty_tree->GetAllNodes();
+	SimpleTreeNode**findlist1 = empty_tree->FindNodesByValue(1);
+	printf("list1:%i\n", list1[0]);
+	printf("list1:%i\n", findlist1[0]);
+	printf("empty_tree:%i\n", empty_tree->Count());
+
+	SimpleTree one_el_tree(new SimpleTreeNode(1,NULL));
+
+	printf("one_element_tree:%i\n", one_el_tree.LeafCount());
+	SimpleTreeNode**list = one_el_tree.GetAllNodes();
+	SimpleTreeNode**findlist = one_el_tree.FindNodesByValue(1);
+	printf("list1:%i\n", *list[0]);
+	printf("findlist1:%i\n", *findlist[0]);
+
 	SimpleTree tree(new SimpleTreeNode(12, NULL));
 	tree.AddChild(tree.Root, new SimpleTreeNode(53, NULL));
 	tree.AddChild(tree.Root, new SimpleTreeNode(8, NULL));
