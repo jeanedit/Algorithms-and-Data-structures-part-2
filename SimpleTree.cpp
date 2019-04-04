@@ -2,7 +2,7 @@
 /*
 Purpose:
 In computer science, a tree is a widely used abstract data type (ADT)
-—or data structure implementing this ADT—that simulates a hierarchical tree structure, 
+â€”or data structure implementing this ADTâ€”that simulates a hierarchical tree structure, 
 with a root value and subtrees of children with a parent node, 
 represented as a set of linked nodes.
 
@@ -132,13 +132,6 @@ public:
 		return LeavesNumber(Root); //in private section
 	}
 
-	/*int NodeLevel()
-	{
-		count = 0;
-		Levels(Root);
-		return count;
-	}*/
-
 private:
 	int count;
 
@@ -177,7 +170,6 @@ private:
 	int LeavesNumber(SimpleTreeNode*elem) //Recursive function for the computation number of leaves into the tree
 	{
 		if (elem == NULL) return count;
-		//printf("Elem->Children[0]:%i\n", elem->Children[0]);
 		if (elem->Children[0] == NULL) count++;
 
 		for (int i = 0; (elem->Children[i]) && (i < MAX_CHILD); ++i)
@@ -185,23 +177,11 @@ private:
 		return count;
 	}
 
-	/*int Levels(SimpleTreeNode*elem)
-	{
-
-		for (int i = 0;(elem->Children[i])&& i < MAX_CHILD; ++i)
-		{
-			
-		}
-
-		for (int i = 0; (elem->Children[i]) && (i < MAX_CHILD); ++i)
-			Levels(elem->Children[i]);
-		return count;
-	}*/
 };
 
 
 
-int main()
+void test()
 {
 	SimpleTree*empty_tree = new SimpleTree(NULL);
 	SimpleTreeNode**list1 = empty_tree->GetAllNodes();
