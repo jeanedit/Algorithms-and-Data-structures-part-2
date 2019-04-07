@@ -100,6 +100,7 @@ public:
 		SimpleTreeNode**list = new SimpleTreeNode* [10 * levels]; 
 		count = 0;
 		NodeRecord(list, Root); //in private section
+		list[count] = NULL;
 		return list;
 	}
 
@@ -108,6 +109,7 @@ public:
 		SimpleTreeNode**list = new SimpleTreeNode*[10 * levels];
 		count = 0;
 		NodeFind(list, Root,val); //in private section
+		list[count] = NULL;
 		return list;
 	}
 
