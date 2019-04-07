@@ -133,6 +133,18 @@ public:
 		count = 0;
 		return LeavesNumber(Root); //in private section
 	}
+	
+	int LevelCount(SimpleTreeNode*elem)
+	{
+		int level = 0;
+		while (elem != NULL)
+		{
+			elem = elem->Parent;
+			if (elem != NULL) printf("Elem:%i\n", elem->NodeValue);
+			++level;
+		}
+		return level;
+	}
 
 private:
 	int count;
@@ -178,6 +190,8 @@ private:
 			LeavesNumber(elem->Children[i]);
 		return count;
 	}
+	
+	
 
 };
 
