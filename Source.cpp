@@ -287,18 +287,3 @@ public:
 			return count;
 		}
 };
-
-int main()
-{
-	BST bst_tree(new BSTNode(8, 8, NULL));
-	bst_tree.AddKeyValue(5, 5);
-	bst_tree.AddKeyValue(2, 2);
-	bst_tree.AddKeyValue(4, 4);
-
-	//printf("LeftChild:%i\tRightChild:%i\n", bst_tree.Root->RightChild->LeftChild->NodeKey,bst_tree.Root->RightChild->RightChild->NodeKey);
-
-
-	//bst_tree.DeleteNodeByKey(8);
-	printf("bst_tree.DeleteNodebyKey _Check:%i\n",bst_tree.Count());
-
-}
