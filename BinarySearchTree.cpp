@@ -287,3 +287,86 @@ public:
 			return count;
 		}
 };
+
+
+//===============TEST for FindNodeByKey============================///
+
+void test_find1()
+{
+	BST*bst_tree = new BST(NULL);
+	bst_tree->AddKeyValue(8, 8);
+	bst_tree->AddKeyValue(5, 5);
+	bst_tree->AddKeyValue(2, 2);
+	bst_tree->AddKeyValue(4, 4);
+	bst_tree->AddKeyValue(12, 12);
+	bst_tree->AddKeyValue(10, 10);
+	bst_tree->AddKeyValue(14, 14);
+	bst_tree->AddKeyValue(11, 11);
+	//printf("LeftChild:%i\tRightChild:%i\n", bst_tree.Root->RightChild->LeftChild->NodeKey,bst_tree.Root->RightChild->RightChild->NodeKey);
+
+
+	//bst_tree.DeleteNodeByKey(8);
+	BSTFind*find = bst_tree->FindNodeByKey(10);
+	printf("bst_tree.FindNodeByKey(10)->NodeHasKey:%i\n", find->NodeHasKey);
+	printf("bst_tree.FindNodeByKey(3)->NodeHasKey:%i\n", bst_tree->FindNodeByKey(3)->NodeHasKey);
+
+	printf("bst_tree.FindNodeByKey(10)->ToLeft:%i\n", find->ToLeft);
+	printf("bst_tree.FindNodeByKey(3)->ToLeft:%i\n", bst_tree->FindNodeByKey(3)->ToLeft);
+
+	printf("bst_tree.FindNodeByKey(10)->Node->NodeKey:%i\n", find->Node->NodeKey);
+	printf("bst_tree.FindNodeByKey(3)->Node->NodeKey:%i\n", bst_tree->FindNodeByKey(3)->Node->NodeKey);
+}
+
+void test_find2()
+{
+	BST*bst_tree = new BST(NULL);
+	bst_tree->AddKeyValue(6, 6);
+
+	printf("bst_tree.FindNodeByKey(7)->NodeHasKey:%i\n", bst_tree->FindNodeByKey(7)->NodeHasKey);
+	printf("bst_tree.FindNodeByKey(3)->NodeHasKey:%i\n", bst_tree->FindNodeByKey(3)->NodeHasKey);
+
+	printf("bst_tree.FindNodeByKey(7)->ToLeft:%i\n", bst_tree->FindNodeByKey(7)->ToLeft);
+	printf("bst_tree.FindNodeByKey(3)->ToLeft:%i\n", bst_tree->FindNodeByKey(3)->ToLeft);
+
+	printf("bst_tree.FindNodeByKey(7)->Node->NodeKey:%i\n", bst_tree->FindNodeByKey(7)->Node->NodeKey);
+	printf("bst_tree.FindNodeByKey(3)->Node->NodeKey:%i\n", bst_tree->FindNodeByKey(3)->Node->NodeKey);
+}
+
+void test_find3()
+{
+	BST*bst_tree = new BST(NULL);
+	bst_tree->AddKeyValue(6, 6);
+	bst_tree->AddKeyValue(9, 9);
+	bst_tree->AddKeyValue(13, 13);
+	bst_tree->AddKeyValue(7, 7);
+	bst_tree->AddKeyValue(16, 16);
+
+	printf("bst_tree.FindNodeByKey(7)->NodeHasKey:%i\n", bst_tree->FindNodeByKey(7)->NodeHasKey);
+	printf("bst_tree.FindNodeByKey(3)->NodeHasKey:%i\n", bst_tree->FindNodeByKey(3)->NodeHasKey);
+
+	printf("bst_tree.FindNodeByKey(7)->ToLeft:%i\n", bst_tree->FindNodeByKey(7)->ToLeft);
+	printf("bst_tree.FindNodeByKey(3)->ToLeft:%i\n", bst_tree->FindNodeByKey(3)->ToLeft);
+
+	printf("bst_tree.FindNodeByKey(7)->Node->NodeKey:%i\n", bst_tree->FindNodeByKey(7)->Node->NodeKey);
+	printf("bst_tree.FindNodeByKey(3)->Node->NodeKey:%i\n", bst_tree->FindNodeByKey(3)->Node->NodeKey);
+}
+
+void test_find4()
+{
+	BST*bst_tree = new BST(NULL);
+	bst_tree->AddKeyValue(12, 12);
+	bst_tree->AddKeyValue(10, 10);
+	bst_tree->AddKeyValue(11, 11);
+	bst_tree->AddKeyValue(9, 9);
+	bst_tree->AddKeyValue(6, 6);
+	bst_tree->AddKeyValue(8, 8);
+
+	printf("bst_tree.FindNodeByKey(7)->NodeHasKey:%i\n", bst_tree->FindNodeByKey(7)->NodeHasKey);
+	printf("bst_tree.FindNodeByKey(3)->NodeHasKey:%i\n", bst_tree->FindNodeByKey(3)->NodeHasKey);
+
+	printf("bst_tree.FindNodeByKey(7)->ToLeft:%i\n", bst_tree->FindNodeByKey(7)->ToLeft);
+	printf("bst_tree.FindNodeByKey(3)->ToLeft:%i\n", bst_tree->FindNodeByKey(3)->ToLeft);
+
+	printf("bst_tree.FindNodeByKey(7)->Node->NodeKey:%i\n", bst_tree->FindNodeByKey(7)->Node->NodeKey);
+	printf("bst_tree.FindNodeByKey(3)->Node->NodeKey:%i\n", bst_tree->FindNodeByKey(3)->Node->NodeKey);
+}
