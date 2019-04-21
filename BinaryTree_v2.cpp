@@ -413,10 +413,10 @@ public:
 			InOrder(Root);
 			break;
 		case 1:
-			PreOrder(Root); //Root first
+			PostOrder(Root); //Root Last
 			break;
 		case 2:
-			PostOrder(Root); //Root last
+			PreOrder(Root); //Root first
 			break;
 		default:
 			return AllNodes;
