@@ -503,7 +503,7 @@ public:
 
 
 
-int main()
+void test()
 {
 	BST*bst_tree = new BST(NULL);
 	bst_tree->AddKeyValue(12, 12);
