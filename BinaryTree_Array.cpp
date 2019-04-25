@@ -96,7 +96,7 @@ private:
 };
 
 
-int main()
+void test()
 {
 	aBST*arr_tree = new aBST(3);
 
@@ -111,8 +111,6 @@ int main()
 	arr_tree->AddKey(43);
 	arr_tree->AddKey(31);
 
-	arr_tree->AddKey(45);
-	arr_tree->AddKey(40);
 
 	//printf("FindKeyIndex:%i\n", arr_tree->FindKeyIndex(84));
 
