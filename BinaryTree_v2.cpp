@@ -27,7 +27,7 @@ Programmer:
 Kozhin Valeriy Alexandrovich, github.com/jeanedit
 
 Date:
-15.04.2019
+21.04.2019
 */
 
 
