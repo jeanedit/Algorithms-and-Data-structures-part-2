@@ -5,15 +5,11 @@ Array representation of a binary tree
 
 Using:
 
-FindKeyIndex Line 42: Finds a node with this key in a binary tree or a node to which we need to add
-node with the given key as a right or left child
-AddKeyValue: adds new child to the parent
-FinMinMax:Finds a biggest or smallest key in a binary tree
-DeleteNodebyKey:removes node with this key
-Count: Counts number of nodes in a binary tree
-WideAllNodes: breadth traversal algorithm(2 implementation)
-DeepAllNodes: depth traversal algorithm(in-order,pre-order and post-order)
-
+Functions:
+FindKeyIndex Line 42
+FindFreeCell Line 52 
+AddKey Line 69
+ArrSizeCount Line 82
 Programmer:
 
 Kozhin Valeriy Alexandrovich, github.com/jeanedit
