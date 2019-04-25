@@ -74,7 +74,7 @@ public:
 		if (index == -1) return -1;
 		
 		Tree[index] = key;
-		return -index;
+		return index;
 	}
 
 private:
@@ -83,7 +83,7 @@ private:
 	{
 		//Expression: ArraySize=(2^depth-1)
 		int count = 1;  
-		for (int i = 0; i < depth; ++i)
+		for (int i = 0; i < depth+1; ++i)
 		{
 			count = count * 2;
 		}
