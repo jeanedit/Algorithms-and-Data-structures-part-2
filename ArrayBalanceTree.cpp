@@ -132,7 +132,7 @@ int* GenerateBBSTArray(int a[], int a_len)
 }
 
 
-int main()
+void test()
 {
 	const int Size = 1;
 	int a[Size];
