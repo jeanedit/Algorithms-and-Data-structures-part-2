@@ -9,4 +9,8 @@ Trees and Graphs
 
 4.Binary Tree Array Representation
 
-5.
+5.Balanced Binary Tree Array Representation
+
+6.Balanced Binary Tree
+
+7.Heap
