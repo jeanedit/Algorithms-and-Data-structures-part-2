@@ -1,3 +1,29 @@
+
+/*
+Purpose:
+
+Implementaton of a heap data structure.
+a heap is a specialized tree-based data structure 
+which is essentially an almost complete tree that satisfies the heap property: 
+in a max heap, for any given node C, 
+if P is a parent node of C, then the key (the value) of P is greater than or equal to the key of C. 
+In a min heap, the key of P is less than or equal to the key of C.
+The node at the "top" of the heap (with no parents) is called the root node.
+
+Using:
+
+MakeHeap() Line 49: Creates Heap
+GetMax() Line 70: Gets Max element(the first element of the Heap)
+Add() Line 91: Adds new element to the Heap and rebuilds it(if it's necessary)
+
+Programmer:
+Kozhin Valeriy Alexandrovich, github.com/jeanedit
+
+Date:
+10.05.2019
+*/
+
+
 #include <stdio.h>
 
 
@@ -12,7 +38,7 @@ class Heap
 {
   public:
     int* HeapArray; // stores non-negative keys
-    int HeapSz;
+    int HeapSz; //Heap's size
 
     Heap() 
     { 
@@ -41,7 +67,7 @@ class Heap
         }
     }
 		
-    int GetMax()
+    int GetMax() //gets the first element of the HeapArray
     {
         int count=0;
         while(HeapArray[count]>=0&&count<HeapSz)
@@ -88,7 +114,7 @@ class Heap
         }
 
 
-        void SiftDown(int index)
+        void SiftDown(int index) 
         {
             while(2*index+1<HeapSz)
             {
@@ -116,7 +142,7 @@ class Heap
         }
 };
 
-int main()
+void test()
 {
     int a[15] = {42, 9, 11, 7, 3, 1, 5, 8, 4, 6, 2, 14,21,3,2};
 
