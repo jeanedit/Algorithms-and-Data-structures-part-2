@@ -6,3 +6,7 @@ Trees and Graphs
 2.Binary Tree
 
 3.Binary Tree with breadth and depth traversal
+
+4.Binary Tree Array Representation
+
+5.
