@@ -14,3 +14,5 @@ Trees and Graphs
 6.Balanced Binary Tree
 
 7.Heap
+
+8.Simple Graph
