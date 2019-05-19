@@ -281,7 +281,6 @@ void test()
 	tree.AddChild(tree.Root->Children[0]->Children[1],
 	new SimpleTreeNode(13,NULL));
 
-	tree.SbTrNodes(tree.Root);
 	SimpleTreeNode**tr=tree.EvenTrees();
-    printf("Number:%i\n",tr[3]->NodeValue);
+    	printf("Number:%i\n",tr[3]->NodeValue);
 }
