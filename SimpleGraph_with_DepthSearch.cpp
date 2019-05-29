@@ -25,52 +25,52 @@ Using:
 
 class Vertex
 {
-public:
-  int Value;
-  bool Hit;
-  Vertex() { Value = 0; }
-  Vertex(int val) { Value = val; }
+   public:
+      int Value;
+      bool Hit;
+      Vertex() { Value = 0; }
+      Vertex(int val) { Value = val; }
 };
 
 struct Node //Struct Node for class List with val and pointer on the previous element
 {
-  Vertex* val;
-  Node *prev;
-  Node(Vertex* value)
-  {
-    val = value;
-    prev = NULL;
-  }
+   Vertex* val;
+   Node *prev;
+   Node(Vertex* value)
+   {
+      val = value;
+      prev = NULL;
+   }
 };
 
 class List //Class List with the two pointers: on the head and on the tail;
 {
-public:
-  Node *head;
-  Node *tail;
-  List()
-  {
-    head = NULL;
-    tail = NULL;
-  }
+   public:
+      Node *head;
+      Node *tail;
+      List()
+      {
+          head = NULL;
+          tail = NULL;
+      }
 };
 
 class Stack
 {
-public:
-  List *list;
-  int stacksize; //numbers of elements in the stack
+   public:
+      List *list;
+      int stacksize; //numbers of elements in the stack
 
-  Stack()
-  {
-    list = new List();
-    stacksize = 0;
-  }
+      Stack()
+      {
+         list = new List();
+         stacksize = 0;
+      }
 
-  int size()
-  {
-    return stacksize;
-  }
+      int size()
+      {
+         return stacksize;
+      }
 
   Vertex* pop() //deleting top element from the stack
   {
@@ -111,22 +111,22 @@ public:
 
 class SimpleGraph
 {
-public:
-  Vertex *vertex;
-  int **m_adjacency; //adjacency matrix
-  //The elements of the matrix indicate whether pairs of vertices are adjacent or not in the graph.
-  int max_vertex;
-  int vert_num; //current number of vertices
+   public:
+      Vertex *vertex;
+      int **m_adjacency; //adjacency matrix
+      //The elements of the matrix indicate whether pairs of vertices are adjacent or not in the graph.
+      int max_vertex;
+      int vert_num; //current number of vertices
 
-  SimpleGraph(int size)
-  {
-    max_vertex = size;
-    m_adjacency = new int *[size];
-    for (int i = 0; i < size; i++)
-      m_adjacency[i] = new int[size];
-    vertex = new Vertex[size];
-    vert_num = 0;
-  }
+      SimpleGraph(int size)
+      {
+         max_vertex = size;
+         m_adjacency = new int *[size];
+         for (int i = 0; i < size; i++)
+         m_adjacency[i] = new int[size];
+         vertex = new Vertex[size];
+         vert_num = 0;
+      }
 
   void AddVertex(int value)
   {
