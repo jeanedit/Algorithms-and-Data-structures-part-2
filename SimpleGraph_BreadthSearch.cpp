@@ -13,7 +13,7 @@ Using:
   IsEdge Line 74
   AddEdge Line 86
   RemoveEdge Line 96
-  DepthFirstSearch Line 190
+  BreadthFirstSearch Line 190
  Programmer: Kozhin Valery Alexandrovich
 
  Date: May,29 2019
