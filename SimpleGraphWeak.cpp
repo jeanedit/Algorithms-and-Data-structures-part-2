@@ -8,15 +8,13 @@ Purpose:
    This implementation contains Breadth search 
 
 Using:
-  AddVertex Line 45
-  RemoveVertex Line 58
-  IsEdge Line 74
-  AddEdge Line 86
-  RemoveEdge Line 96
-  DepthFirstSearch Line 190
+  All of functions are same as in the SimpleGraph.cpp except:
+  WeakVertices Line 133
+  
+  
  Programmer: Kozhin Valery Alexandrovich
 
- Date: May,29 2019
+ Date: June,24 2019
 */
 
 #include <stdio.h>
@@ -189,9 +187,4 @@ void test()
      printf("Vert:%i\n",vert[i]->Value);
   
   printf("EDge:%i\n",graph.IsEdge(7,4));
-}
-
-int main()
-{
-  test();
 }
