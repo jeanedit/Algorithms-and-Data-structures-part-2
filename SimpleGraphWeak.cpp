@@ -8,13 +8,15 @@ Purpose:
    This implementation contains Breadth search 
 
 Using:
-  All of functions are same as in the SimpleGraph.cpp except:
-  WeakVertices Line 133
-  
-  
+  AddVertex Line 45
+  RemoveVertex Line 58
+  IsEdge Line 74
+  AddEdge Line 86
+  RemoveEdge Line 96
+  DepthFirstSearch Line 190
  Programmer: Kozhin Valery Alexandrovich
 
- Date: June,24 2019
+ Date: May,29 2019
 */
 
 #include <stdio.h>
@@ -130,8 +132,8 @@ public:
   
   Vertex**WeakVertices()
   {
-    Vertex**vert_set=new Vertex*[vert_num];
-    for(int i=0;i<vert_num;++i)
+    Vertex**vert_set=new Vertex*[vert_num+1];
+    for(int i=0;i<vert_num+1;++i)
       vert_set[i]=NULL;
 
     Vertex*sm_vert=new Vertex(0);
@@ -152,17 +154,35 @@ public:
     }
     if(weak_vert==true&&vertex[k].Hit==false) {
         sm_vert=new Vertex(vertex[k].Value);
+        printf("sm_vert:%i\n",sm_vert->Value);
         vert_set[count]=sm_vert;
         vertex[k].Hit=true;
-        weak_vert=true;
         ++count;
     }
+    weak_vert=true;
   }
   return vert_set;
   }
   
 };
 
+void test1()
+{
+   SimpleGraph graph(5);
+  for(int i=1;i<=5;++i)
+    graph.AddVertex(i);
+
+  graph.AddEdge(0,1);
+  graph.AddEdge(1,2);
+  graph.AddEdge(2,3);
+  graph.AddEdge(3,4);
+  graph.AddEdge(1,3);
+
+  Vertex**vert=graph.WeakVertices();
+
+   for(int i=0;vert[i]!=NULL;++i)
+     printf("Vert:%i\n",vert[i]->Value);
+}
 
 void test()
 {
@@ -188,3 +208,4 @@ void test()
   
   printf("EDge:%i\n",graph.IsEdge(7,4));
 }
+
