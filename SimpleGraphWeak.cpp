@@ -8,12 +8,8 @@ Purpose:
    This implementation contains Breadth search 
 
 Using:
-  AddVertex Line 45
-  RemoveVertex Line 58
-  IsEdge Line 74
-  AddEdge Line 86
-  RemoveEdge Line 96
-  DepthFirstSearch Line 190
+  Same functions as in the SimpleGraph.cpp
+  WeakVertices Line 133
  Programmer: Kozhin Valery Alexandrovich
 
  Date: May,29 2019
@@ -154,7 +150,6 @@ public:
     }
     if(weak_vert==true&&vertex[k].Hit==false) {
         sm_vert=new Vertex(vertex[k].Value);
-        printf("sm_vert:%i\n",sm_vert->Value);
         vert_set[count]=sm_vert;
         vertex[k].Hit=true;
         ++count;
